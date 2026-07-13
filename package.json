@@ -1,0 +1,15 @@
+{
+  "name": "srwifi-web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sitio web de El Sr WiFi (elsrwifi.com) — estático, servido por Cloudflare Worker",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "img": "node tools/imagenes.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.0",
+    "wrangler": "^4.0.0"
+  }
+}

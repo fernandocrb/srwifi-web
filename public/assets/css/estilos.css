@@ -1,0 +1,385 @@
+/* ============================================================
+   El Sr WiFi — elsrwifi.com
+   Hoja de estilos única. Sin frameworks.
+   Identidad: azul #009bff (marca), verde WhatsApp #25D366.
+   Modo claro/oscuro: automático + botón (data-tema en <html>).
+   ============================================================ */
+
+:root {
+  --azul: #009bff;
+  --azul-hover: #0089e0;
+  --azul-profundo: #04263f;
+  --azul-medio: #065a96;
+  --verde-wa: #25d366;
+  --verde-wa-hover: #1fb958;
+
+  --fondo: #ffffff;
+  --fondo-suave: #f2f8fd;
+  --fondo-tarjeta: #ffffff;
+  --texto: #1c2b36;
+  --texto-suave: #52667a;
+  --borde: #dbe7f0;
+  --sombra: 0 10px 30px rgba(4, 38, 63, 0.10);
+}
+
+html[data-tema="oscuro"] {
+  --fondo: #0b1620;
+  --fondo-suave: #101f2c;
+  --fondo-tarjeta: #14283a;
+  --texto: #e8f1f8;
+  --texto-suave: #9fb4c6;
+  --borde: #23405a;
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-tema]) {
+    --fondo: #0b1620;
+    --fondo-suave: #101f2c;
+    --fondo-tarjeta: #14283a;
+    --texto: #e8f1f8;
+    --texto-suave: #9fb4c6;
+    --borde: #23405a;
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.45);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--fondo);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--azul); }
+
+h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.6em; }
+h1 { font-size: clamp(1.9rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+h3 { font-size: 1.25rem; }
+
+.contenedor { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+section { padding: 64px 0; }
+
+.seccion-suave { background: var(--fondo-suave); }
+
+.centrado { text-align: center; }
+
+.subtitulo {
+  color: var(--azul);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+}
+
+.texto-suave { color: var(--texto-suave); }
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 12px;
+  border: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+}
+.boton:hover { transform: translateY(-2px); }
+.boton svg { flex: none; }
+
+.boton-wa { background: var(--verde-wa); color: #fff !important; }
+.boton-wa:hover { background: var(--verde-wa-hover); }
+
+.boton-azul { background: var(--azul); color: #fff !important; }
+.boton-azul:hover { background: var(--azul-hover); }
+
+.boton-borde {
+  background: transparent;
+  color: var(--texto) !important;
+  border: 2px solid var(--borde);
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--fondo);
+  border-bottom: 1px solid var(--borde);
+}
+.encabezado .contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.logo img { height: 44px; width: auto; }
+.logo .logo-oscuro { display: none; }
+html[data-tema="oscuro"] .logo .logo-claro { display: none; }
+html[data-tema="oscuro"] .logo .logo-oscuro { display: block; }
+@media (prefers-color-scheme: dark) {
+  html:not([data-tema]) .logo .logo-claro { display: none; }
+  html:not([data-tema]) .logo .logo-oscuro { display: block; }
+}
+
+.menu { display: flex; align-items: center; gap: 22px; }
+.menu a { color: var(--texto); text-decoration: none; font-weight: 600; }
+.menu a:hover { color: var(--azul); }
+
+.acciones-encabezado { display: flex; align-items: center; gap: 10px; }
+
+.boton-tema, .boton-menu {
+  background: transparent;
+  border: 1px solid var(--borde);
+  color: var(--texto);
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  line-height: 0;
+}
+.boton-menu { display: none; }
+
+.boton-wa-mini {
+  padding: 10px 16px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--fondo);
+    border-bottom: 1px solid var(--borde);
+    padding: 12px 20px 18px;
+    gap: 14px;
+  }
+  .menu.abierto { display: flex; }
+  .boton-menu { display: inline-block; }
+  .boton-wa-mini span { display: none; } /* solo ícono en celular */
+  .boton-wa-mini { padding: 10px 12px; }
+}
+
+/* ---------- Héroe ---------- */
+.heroe {
+  background:
+    radial-gradient(900px 400px at 85% -10%, rgba(0, 155, 255, 0.18), transparent),
+    var(--fondo-suave);
+  padding: 72px 0;
+}
+.heroe .contenedor {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+.heroe h1 span { color: var(--azul); }
+.heroe p.principal { font-size: 1.15rem; color: var(--texto-suave); }
+.heroe .cta-grupo { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
+.heroe .nota-cta { font-size: 0.9rem; color: var(--texto-suave); margin-top: 12px; }
+.heroe .imagen img { border-radius: 16px; box-shadow: var(--sombra); }
+
+@media (max-width: 900px) {
+  .heroe .contenedor { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ---------- Problema / solución ---------- */
+.problema-solucion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.tarjeta {
+  background: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  padding: 28px;
+}
+.tarjeta.destacada { border-color: var(--azul); box-shadow: var(--sombra); }
+.tarjeta .emoji { font-size: 2rem; }
+@media (max-width: 760px) { .problema-solucion { grid-template-columns: 1fr; } }
+
+/* ---------- Pasos ---------- */
+.pasos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+.paso { text-align: center; padding: 0 8px; }
+.paso .numero {
+  width: 56px; height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--azul);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.3rem;
+  display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 760px) { .pasos { grid-template-columns: 1fr; } }
+
+/* ---------- Sectores ---------- */
+.sectores { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+.sector {
+  background: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.sector img { height: 210px; object-fit: cover; width: 100%; }
+.sector .cuerpo { padding: 26px; display: flex; flex-direction: column; flex: 1; }
+.sector ul { margin: 0 0 20px; padding-left: 20px; }
+.sector li { margin-bottom: 8px; }
+.sector .boton { margin-top: auto; align-self: flex-start; }
+@media (max-width: 760px) { .sectores { grid-template-columns: 1fr; } }
+
+/* ---------- Qué incluye ---------- */
+.incluye { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; }
+.incluye .item {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  padding: 20px;
+}
+.incluye .icono { color: var(--azul); flex: none; margin-top: 3px; }
+@media (max-width: 760px) { .incluye { grid-template-columns: 1fr; } }
+
+/* ---------- Prueba social ---------- */
+.prueba-social .imagen-portales { max-width: 720px; margin: 36px auto 0; }
+.prueba-social .imagen-portales img { border-radius: 16px; box-shadow: var(--sombra); }
+.testimonio-pendiente {
+  border: 2px dashed var(--borde);
+  border-radius: 14px;
+  padding: 24px;
+  color: var(--texto-suave);
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* ---------- Preguntas frecuentes ---------- */
+.faq { max-width: 780px; margin: 36px auto 0; }
+.faq details {
+  background: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 12px;
+}
+.faq summary { font-weight: 700; cursor: pointer; }
+.faq details p { margin: 12px 0 0; color: var(--texto-suave); }
+
+/* ---------- CTA final ---------- */
+.cta-final {
+  background: linear-gradient(135deg, var(--azul-profundo), var(--azul-medio));
+  color: #fff;
+  text-align: center;
+}
+.cta-final h2, .cta-final p { color: #fff; }
+.cta-final .cta-grupo { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+
+/* ---------- Formularios ---------- */
+.formulario {
+  background: var(--fondo-tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: var(--sombra);
+  max-width: 560px;
+  margin: 0 auto;
+}
+.campo { margin-bottom: 18px; }
+.campo label { display: block; font-weight: 600; margin-bottom: 6px; }
+.campo input, .campo select, .campo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: var(--fondo);
+  color: var(--texto);
+  font-size: 1rem;
+  font-family: inherit;
+}
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+  outline: 2px solid var(--azul);
+  border-color: var(--azul);
+}
+.nota-privacidad { font-size: 0.85rem; color: var(--texto-suave); margin-top: 14px; }
+
+/* ---------- Pie ---------- */
+.pie {
+  background: var(--azul-profundo);
+  color: #cde3f5;
+  padding: 48px 0 24px;
+}
+.pie a { color: #fff; }
+.pie .columnas {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.pie img { height: 40px; width: auto; }
+.pie h4 { color: #fff; font-size: 1rem; }
+.pie ul { list-style: none; margin: 0; padding: 0; }
+.pie li { margin-bottom: 10px; }
+.pie .legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: #9dc0da;
+}
+@media (max-width: 760px) { .pie .columnas { grid-template-columns: 1fr; } }
+
+/* ---------- WhatsApp flotante ---------- */
+.wa-flotante {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 60;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--verde-wa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s;
+}
+.wa-flotante:hover { transform: scale(1.08); }
+.wa-flotante svg { width: 32px; height: 32px; fill: #fff; }
+
+/* ---------- Página landing /demo ---------- */
+.landing-demo .heroe { padding: 56px 0; }
+.landing-demo .heroe .contenedor { grid-template-columns: 1fr 1fr; }
+.lista-beneficios { list-style: none; padding: 0; margin: 20px 0 0; }
+.lista-beneficios li {
+  display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px;
+}
+.lista-beneficios .icono { color: var(--azul); flex: none; margin-top: 4px; }
+@media (max-width: 900px) {
+  .landing-demo .heroe .contenedor { grid-template-columns: 1fr; }
+}
+
+/* ---------- Utilidades ---------- */
+.pagina-simple { min-height: 55vh; display: flex; align-items: center; }

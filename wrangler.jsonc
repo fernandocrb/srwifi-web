@@ -1,0 +1,10 @@
+{
+	// Sitio de El Sr WiFi (elsrwifi.com) servido como archivos estáticos por un Worker de Cloudflare.
+	// Desplegar con: npx wrangler deploy
+	"name": "srwifi-web",
+	"compatibility_date": "2026-07-01",
+	"assets": {
+		"directory": "./public",
+		"not_found_handling": "404-page"
+	}
+}

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>WiFi para hoteles y restaurantes en Panamá — El Sr WiFi</title>
+	<meta name="description" content="Convierte el WiFi gratis de tu hotel o restaurante en clientes que regresan. Portal de bienvenida con tu marca, registro con redes sociales y panel de métricas. Instalación y soporte local en Panamá.">
+	<meta name="author" content="El Sr WiFi">
+	<link rel="canonical" href="https://elsrwifi.com/">
+
+	<!-- Compartir en WhatsApp / Facebook / Instagram (Open Graph) -->
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="El Sr WiFi">
+	<meta property="og:locale" content="es_PA">
+	<meta property="og:title" content="Convierte tu WiFi gratis en clientes que regresan">
+	<meta property="og:description" content="WiFi con portal de bienvenida para hoteles y restaurantes en Panamá. Cada visitante que se conecta te deja su contacto. Instalación incluida y soporte local.">
+	<meta property="og:url" content="https://elsrwifi.com/">
+	<meta property="og:image" content="https://elsrwifi.com/assets/img/og.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Convierte tu WiFi gratis en clientes que regresan">
+	<meta name="twitter:description" content="WiFi con portal de bienvenida para hoteles y restaurantes en Panamá. Cada visitante que se conecta te deja su contacto.">
+	<meta name="twitter:image" content="https://elsrwifi.com/assets/img/og.png">
+
+	<link rel="icon" href="/assets/img/favicon.ico">
+	<link rel="stylesheet" href="/assets/css/estilos.css">
+	<script src="/assets/js/principal.js" defer></script>
+
+	<!-- Datos estructurados: negocio local -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "LocalBusiness",
+		"name": "El Sr WiFi",
+		"url": "https://elsrwifi.com/",
+		"logo": "https://elsrwifi.com/assets/img/logo-claro.png",
+		"image": "https://elsrwifi.com/assets/img/og.png",
+		"description": "WiFi para clientes con portal de bienvenida para hoteles y restaurantes en Panamá. El negocio ofrece WiFi gratis y captura los datos de contacto de sus visitantes para hacer marketing.",
+		"telephone": "+507 6330-4392",
+		"email": "ventas@elsrwifi.com",
+		"address": { "@type": "PostalAddress", "addressCountry": "PA" },
+		"areaServed": "Panamá",
+		"priceRange": "$$",
+		"sameAs": ["https://www.facebook.com/srwifipanama"]
+	}
+	</script>
+
+	<!-- Datos estructurados: preguntas frecuentes -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+			{
+				"@type": "Question",
+				"name": "¿Necesito cambiar mi internet?",
+				"acceptedAnswer": { "@type": "Answer", "text": "No. Trabajamos con el internet que ya tienes, de cualquier proveedor. Nosotros agregamos el portal de bienvenida sobre tu conexión actual." }
+			},
+			{
+				"@type": "Question",
+				"name": "¿Qué equipo necesito?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Nosotros instalamos un router profesional MikroTik como parte del servicio. Si ya tienes un equipo compatible, lo aprovechamos. La instalación está incluida." }
+			},
+			{
+				"@type": "Question",
+				"name": "¿Los datos de los clientes son míos?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Sí, son 100% de tu negocio. Puedes verlos y usarlos cuando quieras para tus promociones. No los vendemos ni los compartimos con nadie." }
+			},
+			{
+				"@type": "Question",
+				"name": "¿Cumple con la protección de datos?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Sí. Antes de conectarse, cada visitante ve y acepta los términos de uso y la política de privacidad, en línea con la Ley 81 de protección de datos personales de Panamá." }
+			},
+			{
+				"@type": "Question",
+				"name": "¿El WiFi de mis clientes queda separado del de mi negocio?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Sí. La red de tus visitantes queda separada de tus equipos de trabajo (caja, cámaras, oficina), para que tu operación esté protegida." }
+			},
+			{
+				"@type": "Question",
+				"name": "¿Cuánto cuesta?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Cada negocio es distinto (tamaño del local, cantidad de visitantes, equipos). Escríbenos por WhatsApp al +507 6330-4392 y te cotizamos el mismo día." }
+			}
+		]
+	}
+	</script>
+
+	<!-- Seguimiento de visitantes con Mautic (nuestro servidor) -->
+	<script>
+	(function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
+	w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
+	m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://mkt.educapanama.net/mtc.js','mt');
+	mt('send', 'pageview');
+	</script>
+
+	<!-- [PREPARADO, NO ACTIVO] Píxel de Meta: cuando corramos campañas en Facebook/Instagram,
+	     descomentar este bloque y reemplazar TU_PIXEL_ID por el ID real del píxel.
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', 'TU_PIXEL_ID');
+	fbq('track', 'PageView');
+	</script>
+	-->
+
+	<!-- [PREPARADO, NO ACTIVO] Google Tag Manager: cuando activemos Google Analytics,
+	     descomentar y reemplazar GTM-XXXXXXX por el ID real del contenedor.
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+	-->
+</head>
+
+<body>
+
+<!-- Encabezado -->
+<header class="encabezado">
+	<div class="contenedor">
+		<a class="logo" href="/" aria-label="El Sr WiFi — inicio">
+			<img class="logo-claro" src="/assets/img/logo-claro.png" alt="El Sr WiFi — el experto en wifi" width="170" height="60">
+			<img class="logo-oscuro" src="/assets/img/logo-oscuro.png" alt="El Sr WiFi — el experto en wifi" width="170" height="60">
+		</a>
+
+		<nav class="menu" aria-label="Menú principal">
+			<a href="/#como-funciona">Cómo funciona</a>
+			<a href="/#sectores">Para tu negocio</a>
+			<a href="/#incluye">Qué incluye</a>
+			<a href="/#preguntas">Preguntas</a>
+			<a href="/demo/">Solicitar demo</a>
+		</nav>
+
+		<div class="acciones-encabezado">
+			<button class="boton-tema" type="button" aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro">
+				<svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/></svg>
+			</button>
+			<a class="boton boton-wa boton-wa-mini" href="https://wa.me/50763304392?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20saber%20m%C3%A1s%20del%20WiFi%20con%20portal%20para%20clientes" target="_blank" rel="noopener">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+				<span>WhatsApp</span>
+			</a>
+			<button class="boton-menu" type="button" aria-label="Abrir menú">
+				<svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 3h12v1.5H2zM2 7.25h12v1.5H2zM2 11.5h12V13H2z"/></svg>
+			</button>
+		</div>
+	</div>
+</header>
+
+<main>
+
+<!-- Héroe -->
+<section class="heroe">
+	<div class="contenedor">
+		<div>
+			<span class="subtitulo">WiFi para hoteles y restaurantes en Panamá</span>
+			<h1>Convierte tu WiFi gratis en <span>clientes que regresan</span></h1>
+			<p class="principal">Cada visitante que se conecta al WiFi de tu hotel o restaurante te deja su nombre y contacto. Tú le das internet; tu negocio gana una lista de clientes para promociones, reservas y visitas repetidas.</p>
+			<div class="cta-grupo">
+				<a class="boton boton-wa" href="https://wa.me/50763304392?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20saber%20m%C3%A1s%20del%20WiFi%20con%20portal%20para%20clientes" target="_blank" rel="noopener">
+					<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+					Escríbenos por WhatsApp
+				</a>
+				<a class="boton boton-borde" href="/demo/">Solicitar una demo</a>
+			</div>
+			<p class="nota-cta">Respuesta el mismo día · Atención local en español</p>
+		</div>
+		<div class="imagen">
+			<img src="/assets/img/portales.webp" alt="Portales de bienvenida WiFi reales con la marca de cada negocio, vistos en tres celulares" width="1000" height="838">
+		</div>
+	</div>
+</section>
+
+<!-- Problema / solución -->
+<section>
+	<div class="contenedor">
+		<div class="centrado">
+			<span class="subtitulo">El problema</span>
+			<h2>Hoy regalas WiFi y no recibes nada a cambio</h2>
+		</div>
+		<div class="problema-solucion" style="margin-top:36px;">
+			<div class="tarjeta">
+				<div class="emoji">📶</div>
+				<h3>Así es ahora</h3>
+				<p class="texto-suave">Tus visitantes piden la clave del WiFi, la usan y se van. No sabes quiénes son, ni cuándo volvieron, ni cómo invitarlos a regresar.</p>
+			</div>
+			<div class="tarjeta destacada">
+				<div class="emoji">💙</div>
+				<h3>Así es con El Sr WiFi</h3>
+				<p class="texto-suave">Cada conexión se convierte en un contacto para tu negocio: nombre, correo o celular y fecha de cumpleaños. Una lista propia para promociones y visitas repetidas.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Cómo funciona -->
+<section class="seccion-suave" id="como-funciona">
+	<div class="contenedor">
+		<div class="centrado">
+			<span class="subtitulo">Cómo funciona</span>
+			<h2>Tres pasos, sin complicaciones</h2>
+		</div>
+		<div class="pasos">
+			<div class="paso">
+				<div class="numero">1</div>
+				<h3>Tu cliente se conecta</h3>
+				<p class="texto-suave">Al elegir tu WiFi, ve una pantalla de bienvenida con tu logo y tus colores. Primera impresión: profesional.</p>
+			</div>
+			<div class="paso">
+				<div class="numero">2</div>
+				<h3>Se registra en segundos</h3>
+				<p class="texto-suave">Entra con Google, Facebook, su correo o su celular. Sin claves que pedir en la caja ni papelitos pegados en la pared.</p>
+			</div>
+			<div class="paso">
+				<div class="numero">3</div>
+				<h3>Tu negocio gana un contacto</h3>
+				<p class="texto-suave">Ves cuánta gente te visita, quiénes regresan y sus datos de contacto, listos para tus promociones.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Sectores -->
+<section id="sectores">
+	<div class="contenedor">
+		<div class="centrado">
+			<span class="subtitulo">Para tu negocio</span>
+			<h2>Hecho para hoteles y restaurantes</h2>
+			<p class="texto-suave">¿Tienes una clínica, gimnasio o plaza comercial? También funciona — escríbenos.</p>
+		</div>
+		<div class="sectores">
+			<article class="sector">
+				<img src="/assets/img/hotel.webp" alt="Habitación de hotel con aviso de WiFi disponible" loading="lazy" width="1000" height="667">
+				<div class="cuerpo">
+					<h3>Hoteles</h3>
+					<ul class="texto-suave">
+						<li>Recibe a tus huéspedes con una bienvenida digital con tu marca.</li>
+						<li>Guarda el contacto de cada huésped para invitarlo a volver (temporadas, promociones, feriados).</li>
+						<li>Conoce cuántos visitantes tienes por día y cuántos son recurrentes.</li>
+					</ul>
+					<a class="boton boton-wa" href="https://wa.me/50763304392?text=Hola%2C%20tengo%20un%20hotel%20y%20quiero%20saber%20m%C3%A1s%20del%20WiFi%20con%20portal%20para%20clientes" target="_blank" rel="noopener">Cotizar para mi hotel</a>
+				</div>
+			</article>
+			<article class="sector">
+				<img src="/assets/img/registro.webp" alt="Cliente registrándose desde su celular" loading="lazy" width="1000" height="1027">
+				<div class="cuerpo">
+					<h3>Restaurantes</h3>
+					<ul class="texto-suave">
+						<li>Convierte a cada comensal en un contacto: perfecto para promos de mitad de semana.</li>
+						<li>Felicita a tus clientes en su cumpleaños y tráelos de vuelta con una oferta.</li>
+						<li>Distingue clientes nuevos de los que regresan, con números reales.</li>
+					</ul>
+					<a class="boton boton-wa" href="https://wa.me/50763304392?text=Hola%2C%20tengo%20un%20restaurante%20y%20quiero%20saber%20m%C3%A1s%20del%20WiFi%20con%20portal%20para%20clientes" target="_blank" rel="noopener">Cotizar para mi restaurante</a>
+				</div>
+			</article>
+		</div>
+	</div>
+</section>
+
+<!-- Qué incluye -->
+<section class="seccion-suave" id="incluye">
+	<div class="contenedor">
+		<div class="centrado">
+			<span class="subtitulo">Qué incluye</span>
+			<h2>Todo lo que necesitas, en un solo servicio</h2>
+		</div>
+		<div class="incluye">
+			<div class="item">
+				<svg class="icono" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514ZM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h6.256A4.493 4.493 0 0 1 8 13.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 8.928l-1.239.9a.5.5 0 0 1-.585 0L5 8.928l-1.239.9A.5.5 0 0 1 3 9.424V3h10v4.335c.587.15 1.096.442 1.5.835V3a2 2 0 0 0-2-2H2Z"/></svg>
+				<div><strong>Portal con tu marca</strong><p class="texto-suave" style="margin:6px 0 0;">Pantalla de bienvenida con tu logo y tus colores, como los grandes hoteles.</p></div>
+			</div>
+			<div class="item">
+				<svg class="icono" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>
+				<div><strong>Registro con redes sociales</strong><p class="texto-suave" style="margin:6px 0 0;">Tus clientes entran con Google, Facebook, correo o celular en segundos.</p></div>
+			</div>
+			<div class="item">
+				<svg class="icono" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07Z"/></svg>
+				<div><strong>Panel de métricas</strong><p class="texto-suave" style="margin:6px 0 0;">Cuántos visitantes tienes, cuántos regresan y sus datos de contacto, todo en un solo lugar.</p></div>
+			</div>
+			<div class="item">
+				<svg class="icono" width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/></svg>
+				<div><strong>Instalación y soporte local</strong><p class="texto-suave" style="margin:6px 0 0;">Instalamos todo por ti y te acompañamos por WhatsApp, en español, desde Panamá.</p></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Prueba social -->
+<section class="prueba-social">
+	<div class="contenedor">
+		<div class="centrado">
+			<span class="subtitulo">Portales reales</span>
+			<h2>Así se ve tu marca cuando alguien se conecta</h2>
+			<p class="texto-suave">Portales de bienvenida que hemos creado para negocios reales:</p>
+		</div>
+		<div class="imagen-portales">
+			<img src="/assets/img/portales.webp" alt="Tres portales de bienvenida WiFi reales: restaurante The Garage, Air Panamá y un menú navideño" loading="lazy" width="1000" height="838">
+		</div>
+		<!-- [PENDIENTE: testimonio real] Cuando tengamos el primer testimonio de un cliente,
+		     reemplazar este bloque por la cita, el nombre y el negocio (con su permiso). -->
+		<div class="testimonio-pendiente">
+			Aquí irá la opinión de nuestros clientes. (Pendiente: testimonio real)
+		</div>
+	</div>
+</section>
+
+<!-- Preguntas frecuentes -->
+<section class="seccion-suave" id="preguntas">
+	<div class="contenedor">
+		<div class="centrado">
+			<span class="subtitulo">Preguntas frecuentes</span>
+			<h2>Lo que todo dueño pregunta</h2>
+		</div>
+		<div class="faq">
+			<details>
+				<summary>¿Necesito cambiar mi internet?</summary>
+				<p>No. Trabajamos con el internet que ya tienes, de cualquier proveedor. Nosotros agregamos el portal de bienvenida sobre tu conexión actual.</p>
+			</details>
+			<details>
+				<summary>¿Qué equipo necesito?</summary>
+				<p>Nosotros instalamos un router profesional MikroTik como parte del servicio. Si ya tienes un equipo compatible, lo aprovechamos. La instalación está incluida.</p>
+			</details>
+			<details>
+				<summary>¿Los datos de los clientes son míos?</summary>
+				<p>Sí, son 100% de tu negocio. Puedes verlos y usarlos cuando quieras para tus promociones. No los vendemos ni los compartimos con nadie.</p>
+			</details>
+			<details>
+				<summary>¿Cumple con la protección de datos?</summary>
+				<p>Sí. Antes de conectarse, cada visitante ve y acepta los términos de uso y la política de privacidad, en línea con la Ley 81 de protección de datos personales de Panamá.</p>
+			</details>
+			<details>
+				<summary>¿El WiFi de mis clientes queda separado del de mi negocio?</summary>
+				<p>Sí. La red de tus visitantes queda separada de tus equipos de trabajo (caja, cámaras, oficina), para que tu operación esté protegida.</p>
+			</details>
+			<details>
+				<summary>¿Cuánto cuesta?</summary>
+				<p>Cada negocio es distinto (tamaño del local, cantidad de visitantes, equipos). Escríbenos por WhatsApp al <a href="https://wa.me/50763304392" target="_blank" rel="noopener">+507 6330-4392</a> y te cotizamos el mismo día.</p>
+			</details>
+		</div>
+	</div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto">
+	<div class="contenedor">
+		<div class="centrado">
+			<span class="subtitulo">Contacto</span>
+			<h2>¿Prefieres que te escribamos nosotros?</h2>
+			<p class="texto-suave">Déjanos tus datos y te contactamos. O escríbenos directo a <a href="mailto:ventas@elsrwifi.com">ventas@elsrwifi.com</a>.</p>
+		</div>
+		<div style="margin-top:36px;">
+			<!-- Formulario conectado a nuestro Mautic (formulario 11, el mismo que ya funcionaba) -->
+			<form class="formulario" autocomplete="on" method="post"
+				action="https://mkt.educapanama.net/form/submit?formId=11"
+				id="mauticform_elsrwificontacto" data-mautic-form="elsrwificontacto"
+				enctype="multipart/form-data">
+				<div class="campo">
+					<label for="mauticform_input_elsrwificontacto_nombre">Nombre</label>
+					<input type="text" id="mauticform_input_elsrwificontacto_nombre" name="mauticform[nombre]" required>
+				</div>
+				<div class="campo">
+					<label for="mauticform_input_elsrwificontacto_correo_de_empresa">Correo</label>
+					<input type="email" id="mauticform_input_elsrwificontacto_correo_de_empresa" name="mauticform[correo_de_empresa]" required>
+				</div>
+				<div class="campo">
+					<label for="mauticform_input_elsrwificontacto_nombre_de_la_organizacion">Nombre de tu negocio</label>
+					<input type="text" id="mauticform_input_elsrwificontacto_nombre_de_la_organizacion" name="mauticform[nombre_de_la_organizacion]">
+				</div>
+				<div class="campo">
+					<label for="mauticform_input_elsrwificontacto_mensaje">¿En qué te ayudamos?</label>
+					<textarea id="mauticform_input_elsrwificontacto_mensaje" name="mauticform[mensaje]" rows="4"></textarea>
+				</div>
+				<button type="submit" name="mauticform[submit]" class="boton boton-azul">Enviar mensaje</button>
+				<input type="hidden" name="mauticform[formId]" value="11">
+				<input type="hidden" name="mauticform[return]" value="https://elsrwifi.com/gracias/">
+				<input type="hidden" name="mauticform[formName]" value="elsrwificontacto">
+				<p class="nota-privacidad">Usamos tus datos solo para responderte. No los compartimos con nadie.</p>
+			</form>
+		</div>
+	</div>
+</section>
+
+<!-- CTA final -->
+<section class="cta-final">
+	<div class="contenedor">
+		<h2>Tu WiFi ya lo pagas todos los meses.<br>Haz que te traiga clientes.</h2>
+		<p>Cuéntanos de tu negocio y te decimos exactamente cómo funcionaría contigo.</p>
+		<div class="cta-grupo">
+			<a class="boton boton-wa" href="https://wa.me/50763304392?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20saber%20m%C3%A1s%20del%20WiFi%20con%20portal%20para%20clientes" target="_blank" rel="noopener">
+				<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+				Escríbenos por WhatsApp
+			</a>
+			<a class="boton boton-borde" style="color:#fff !important; border-color:rgba(255,255,255,0.45);" href="/demo/">Solicitar una demo</a>
+		</div>
+	</div>
+</section>
+
+</main>
+
+<!-- Pie -->
+<footer class="pie">
+	<div class="contenedor">
+		<div class="columnas">
+			<div>
+				<img src="/assets/img/logo-oscuro.png" alt="El Sr WiFi">
+				<p style="margin-top:16px;">WiFi para clientes con portal de bienvenida. Convierte tu WiFi gratis en clientes que regresan.</p>
+			</div>
+			<div>
+				<h4>Contacto</h4>
+				<ul>
+					<li><a href="https://wa.me/50763304392" target="_blank" rel="noopener">WhatsApp: +507 6330-4392</a></li>
+					<li><a href="mailto:ventas@elsrwifi.com">ventas@elsrwifi.com</a></li>
+					<li>Panamá</li>
+				</ul>
+			</div>
+			<div>
+				<h4>Síguenos</h4>
+				<ul>
+					<!-- [PENDIENTE: confirmar que esta es la página correcta de Facebook] -->
+					<li><a href="https://www.facebook.com/srwifipanama" target="_blank" rel="noopener">Facebook</a></li>
+				</ul>
+				<h4 style="margin-top:20px;">Enlaces</h4>
+				<ul>
+					<li><a href="/demo/">Solicitar una demo</a></li>
+					<li><a href="/#preguntas">Preguntas frecuentes</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="legal">© 2026 El Sr WiFi · elsrwifi.com · Hecho en Panamá</div>
+	</div>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a class="wa-flotante" href="https://wa.me/50763304392?text=Hola%2C%20tengo%20un%20negocio%20y%20quiero%20saber%20m%C3%A1s%20del%20WiFi%20con%20portal%20para%20clientes" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+	<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
