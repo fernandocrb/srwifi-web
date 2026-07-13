@@ -35,13 +35,31 @@
       });
     }
 
-    // --- Aviso si el formulario de demo aún no está conectado ---
-    var formPendiente = document.querySelector("form[data-pendiente='si']");
-    if (formPendiente) {
-      formPendiente.addEventListener("submit", function (e) {
+    // --- Envío de formularios a Mautic ---
+    // Mautic no manda cabeceras CORS, así que su redirección propia no funciona
+    // desde otro dominio: enviamos con fetch (no-cors) y redirigimos nosotros
+    // a /gracias/ (mismo patrón que el sitio de Sellum).
+    var formsMautic = document.querySelectorAll("form[data-mautic-form]");
+    formsMautic.forEach(function (form) {
+      form.addEventListener("submit", function (e) {
         e.preventDefault();
-        alert("Este formulario está en configuración. Escríbenos por WhatsApp y te atendemos de una vez.");
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        var boton = form.querySelector("button[type='submit']");
+        if (boton) {
+          boton.disabled = true;
+          boton.textContent = "Enviando…";
+        }
+        fetch(form.action, {
+          method: "POST",
+          mode: "no-cors",
+          body: new FormData(form)
+        }).finally(function () {
+          window.location.href = "/gracias/";
+        });
       });
-    }
+    });
   });
 })();

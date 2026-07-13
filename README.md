@@ -34,9 +34,12 @@ cuando el sitio esté verificado en la URL de prueba.
 ## Mautic
 
 - Seguimiento de visitantes (`mtc.js` de mkt.educapanama.net): activo en todas las páginas.
-- Formulario de contacto (página principal): formulario **11** de Mautic (el mismo que ya existía).
-- Formulario de demo (`/demo/`): **pendiente** crear el formulario nuevo en Mautic y
-  reemplazar `FORMID_DEMO` en `public/demo/index.html` (2 lugares) y quitar `data-pendiente="si"`.
+- Formulario de contacto (página principal): formulario **5** de Mautic ("Contacto El Sr WiFi",
+  campos: nombre, correo, negocio, mensaje).
+- Formulario de demo (`/demo/`): formulario **4** de Mautic ("Demo El Sr WiFi",
+  campos: nombre, negocio, tipo_de_negocio, whatsapp, correo).
+- El envío lo hace `principal.js` con fetch (no-cors) y redirige a `/gracias/`
+  (Mautic no manda cabeceras CORS, su redirección propia no sirve desde otro dominio).
 
 ## Píxel de Meta y Google Analytics
 
