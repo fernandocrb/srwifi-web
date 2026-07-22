@@ -11,10 +11,14 @@ que vive en el repo `elsrwifi` (carpeta `portal/`).
 - `public/` — el sitio completo (lo que se publica)
   - `index.html` — página principal
   - `demo/` — landing de captura de leads (formulario → Mautic)
-  - `gracias/` — página tras enviar un formulario
-  - `recursos/` — sección de blog/artículos (agregada recientemente)
+  - `gracias/` — página tras enviar un formulario. Recibe `?origen=demo` o
+    `?origen=contacto`, que es lo que Analytics usa para distinguir los leads
+  - `recursos/` — sección de blog/artículos
+  - `privacidad/` — aviso de privacidad, incluye la sección de cookies
   - `404.html`, `_redirects` (fuerza `elsrwifi.com` como dominio canónico, sin `www`)
   - `assets/` — estilos, scripts e imágenes
+    - `js/cookies.js` — consentimiento de cookies (ver abajo, **léelo antes de
+      tocar cualquier cosa de medición**)
 - `respaldo-2026-07-12/` — copia exacta del sitio viejo (el que estaba en Firebase), como referencia histórica
 - `wrangler.jsonc` — configuración del Worker de Cloudflare
 
@@ -26,17 +30,52 @@ npm run deploy    # publica al Worker de Cloudflare
 npm run img       # regenera imágenes WebP y la imagen OG (tools/imagenes.js)
 ```
 
+## Medición y cookies — la regla más importante de este repo
+
+**Ningún script de seguimiento va suelto en el HTML.** Todo pasa por
+`public/assets/js/cookies.js`, que las 8 páginas cargan en el `<head>`. Ese
+archivo decide, según lo que el visitante haya respondido en el aviso:
+
+- Sin decidir o "Rechazar" → no carga **nada** (ni Google Tag Manager ni
+  Mautic) y borra las cookies `_ga*`, `_gid`, `_gat`, `mtc_*` y `mautic_*` que
+  hubieran quedado de una aceptación previa.
+- "Aceptar" → carga GTM (`GTM-NJ6HFQBC`), que a su vez carga Google Analytics
+  (`G-7XJG0HCP12`), y Mautic.
+
+La decisión se guarda en `localStorage` bajo `srwifi-cookies` y se puede
+cambiar desde el enlace `#cambiar-cookies` de `/privacidad/`.
+
+Esto responde a la Ley 81 de Panamá y a una decisión explícita de Fernando
+(21-jul-2026): consentimiento real, no un aviso decorativo. **Si vas a agregar
+cualquier herramienta de medición nueva (píxel de Meta, Google Ads, etc.),
+tiene que entrar por `cookies.js`, no como script suelto en el HTML.** Meterlo
+directo en el `<head>` rompería la promesa de cumplimiento que el propio sitio
+le vende a sus clientes.
+
+El píxel de Meta sigue preparado pero comentado en `index.html`, con
+`TU_PIXEL_ID` de relleno. Cuando llegue el ID real hay que moverlo a
+`cookies.js` en vez de descomentarlo donde está.
+
 ## Estado actual (según los últimos commits)
 
-Rediseño completo del sitio (listo para el Worker de Cloudflare), formularios
-conectados a Mautic (demo y contacto, vía fetch no-cors), etiqueta de
-verificación de dominio de Facebook, página de aviso de privacidad, y la
-sección `/recursos` con los dos primeros artículos + redirect de `www` al
-dominio raíz — este último es el cambio más reciente.
+Rediseño completo del sitio (Worker de Cloudflare), formularios conectados a
+Mautic (demo y contacto, vía fetch no-cors), verificación de dominio de
+Facebook, aviso de privacidad y `/recursos` con tres artículos.
 
-No hay tareas pendientes documentadas — revisa `git log` y confirma con
-Fernando el siguiente paso (ej. más artículos en `/recursos`) antes de
-asumir alcance nuevo.
+Lo más reciente (21-jul-2026, ya en producción): tercer artículo
+(`/recursos/wifi-para-restaurantes/`), Google Tag Manager y Analytics activos
+en las 8 páginas, consentimiento de cookies, y el evento de conversión
+`generate_lead` que se dispara al llegar a `/gracias/` — verificado en el sitio
+real, no solo en local.
+
+### Pendientes
+
+- En `index.html` queda una nota `[PENDIENTE]` sobre si
+  `facebook.com/srwifipanama` es la página correcta. Fernando tiene que
+  confirmarlo antes de quitarla.
+- El bloque del testimonio real sigue reservado y vacío en `index.html`.
+- Marcar `generate_lead` como evento clave en Analytics (pendiente del lado de
+  Google, ver `srwifi-marketing/MEDICION.md`).
 
 ## Contexto del usuario
 
