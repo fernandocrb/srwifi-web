@@ -14,7 +14,7 @@
 	</url>
 	<url>
 		<loc>https://elsrwifi.com/recursos/</loc>
-		<lastmod>2026-07-18</lastmod>
+		<lastmod>2026-07-21</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.7</priority>
 	</url>
@@ -27,6 +27,12 @@
 	<url>
 		<loc>https://elsrwifi.com/recursos/como-un-hotel-convierte-su-wifi-en-clientes/</loc>
 		<lastmod>2026-07-18</lastmod>
+		<changefreq>yearly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://elsrwifi.com/recursos/wifi-para-restaurantes/</loc>
+		<lastmod>2026-07-21</lastmod>
 		<changefreq>yearly</changefreq>
 		<priority>0.6</priority>
 	</url>

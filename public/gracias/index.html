@@ -11,14 +11,9 @@
 	<link rel="stylesheet" href="/assets/css/estilos.css">
 	<script src="/assets/js/principal.js" defer></script>
 
-	<!-- Seguimiento de visitantes con Mautic (nuestro servidor) -->
-	<script>
-	(function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
-	w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
-	m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://mkt.educapanama.net/mtc.js','mt');
-	mt('send', 'pageview');
-	</script>
+	<!-- Consentimiento de cookies (Ley 81): carga Google Tag Manager y Mautic
+	     solo si el visitante acepta. Ver assets/js/cookies.js -->
+	<script src="/assets/js/cookies.js"></script>
 </head>
 <body>
 

@@ -11,14 +11,9 @@
 	<link rel="stylesheet" href="/assets/css/estilos.css">
 	<script src="/assets/js/principal.js" defer></script>
 
-	<!-- Seguimiento de visitantes con Mautic (nuestro servidor) -->
-	<script>
-	(function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
-	w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
-	m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://mkt.educapanama.net/mtc.js','mt');
-	mt('send', 'pageview');
-	</script>
+	<!-- Consentimiento de cookies (Ley 81): carga Google Tag Manager y Mautic
+	     solo si el visitante acepta. Ver assets/js/cookies.js -->
+	<script src="/assets/js/cookies.js"></script>
 </head>
 <body>
 
@@ -54,6 +49,11 @@
 
 		<h3 style="margin-top:2rem">Protección de datos (Panamá)</h3>
 		<p class="texto-suave">Tratamos tus datos conforme a la Ley 81 de Protección de Datos Personales de Panamá. Solo pedimos los datos necesarios para darte acceso al WiFi y permitir que el negocio te contacte con promociones, si así lo decides.</p>
+
+		<h3 style="margin-top:2rem">Cookies de este sitio web</h3>
+		<p class="texto-suave">En elsrwifi.com usamos cookies de medición para saber cuánta gente visita el sitio y de dónde llega (por ejemplo, si llegó desde Google o desde Facebook). Concretamente usamos Google Analytics, a través de Google Tag Manager, y nuestra propia plataforma Mautic.</p>
+		<p class="texto-suave"><strong>Ninguna de estas herramientas se activa hasta que tú las aceptas.</strong> Al entrar por primera vez verás un aviso con dos botones: si eliges "Rechazar", o si simplemente no eliges nada, no se carga ninguna herramienta de seguimiento y el sitio funciona igual. Estas cookies no se usan para identificarte personalmente ni para mostrarte publicidad.</p>
+		<p class="texto-suave">Puedes cambiar tu decisión cuando quieras: <a href="#" id="cambiar-cookies">volver a mostrar el aviso de cookies</a>.</p>
 
 		<h3 style="margin-top:2rem">Tus derechos</h3>
 		<p class="texto-suave">Puedes solicitar en cualquier momento el acceso, la actualización o la eliminación de tus datos escribiendo a <a href="mailto:ventas@elsrwifi.com">ventas@elsrwifi.com</a> o por <a href="https://wa.me/50763304392" target="_blank" rel="noopener">WhatsApp al +507 6330-4392</a>.</p>

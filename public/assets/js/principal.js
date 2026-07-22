@@ -52,12 +52,17 @@
           boton.disabled = true;
           boton.textContent = "Enviando…";
         }
+        // El origen viaja en la URL de /gracias/ para que Analytics pueda
+        // distinguir un lead de demo de uno de contacto (ver GTM: generate_lead).
+        var origen = form.getAttribute("data-mautic-form") === "demoelsrwifi"
+          ? "demo"
+          : "contacto";
         fetch(form.action, {
           method: "POST",
           mode: "no-cors",
           body: new FormData(form)
         }).finally(function () {
-          window.location.href = "/gracias/";
+          window.location.href = "/gracias/?origen=" + origen;
         });
       });
     });

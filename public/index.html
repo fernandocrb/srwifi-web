@@ -90,15 +90,6 @@
 	}
 	</script>
 
-	<!-- Seguimiento de visitantes con Mautic (nuestro servidor) -->
-	<script>
-	(function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
-	w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
-	m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://mkt.educapanama.net/mtc.js','mt');
-	mt('send', 'pageview');
-	</script>
-
 	<!-- [PREPARADO, NO ACTIVO] Píxel de Meta: cuando corramos campañas en Facebook/Instagram,
 	     descomentar este bloque y reemplazar TU_PIXEL_ID por el ID real del píxel.
 	<script>
@@ -112,14 +103,9 @@
 	</script>
 	-->
 
-	<!-- [PREPARADO, NO ACTIVO] Google Tag Manager: cuando activemos Google Analytics,
-	     descomentar y reemplazar GTM-XXXXXXX por el ID real del contenedor.
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-	-->
+	<!-- Consentimiento de cookies (Ley 81): carga Google Tag Manager y Mautic
+	     solo si el visitante acepta. Ver assets/js/cookies.js -->
+	<script src="/assets/js/cookies.js"></script>
 </head>
 
 <body>
