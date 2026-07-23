@@ -1,9 +1,9 @@
 /* Consentimiento de cookies — Ley 81 de protección de datos personales (Panamá).
  *
  * Regla: ninguna herramienta de seguimiento se carga hasta que el visitante acepta.
- * Esto cubre Google Tag Manager (que a su vez carga Google Analytics) y el
- * seguimiento de Mautic. Si el visitante rechaza, o si todavía no ha decidido,
- * el sitio funciona igual pero no se le rastrea.
+ * Esto cubre Google Tag Manager (que a su vez carga Google Analytics), el
+ * seguimiento de Mautic y el píxel de Meta (Facebook/Instagram). Si el visitante
+ * rechaza, o si todavía no ha decidido, el sitio funciona igual pero no se le rastrea.
  *
  * La decisión se guarda en localStorage bajo "srwifi-cookies" con el valor
  * "aceptadas" o "rechazadas", y se puede cambiar desde /privacidad/.
@@ -14,6 +14,7 @@
   var CLAVE = "srwifi-cookies";
   var GTM_ID = "GTM-NJ6HFQBC";
   var MAUTIC_URL = "https://mkt.educapanama.net/mtc.js";
+  var PIXEL_ID = "2928863920537987";
 
   function decision() {
     try {
@@ -59,16 +60,33 @@
     mautic.src = MAUTIC_URL;
     document.head.appendChild(mautic);
     window.mt("send", "pageview");
+
+    // Píxel de Meta (Facebook/Instagram). Se enciende ahora, pero solo con
+    // consentimiento, para ir construyendo el público de remarketing antes de
+    // pautar. El fragmento es el estándar de Meta.
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = [];
+      t = b.createElement(e); t.async = !0; t.src = v;
+      s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    window.fbq("init", PIXEL_ID);
+    window.fbq("track", "PageView");
   }
 
   // Si el visitante rechaza (o cambia de opinión después de haber aceptado),
   // no basta con dejar de cargar los scripts: hay que borrar las cookies que
-  // ya se hubieran creado. Google usa _ga/_gid/_gat y Mautic mtc_*/mautic_*.
+  // ya se hubieran creado. Google usa _ga/_gid/_gat, Mautic mtc_*/mautic_* y
+  // Meta _fbp/_fbc.
   function borrarCookiesDeSeguimiento() {
     var dominios = ["", location.hostname, "." + location.hostname];
     document.cookie.split(";").forEach(function (cookie) {
       var nombre = cookie.split("=")[0].trim();
-      if (!/^(_ga|_gid|_gat|mtc_|mautic_)/.test(nombre)) return;
+      if (!/^(_ga|_gid|_gat|_fbp|_fbc|mtc_|mautic_)/.test(nombre)) return;
       dominios.forEach(function (dominio) {
         document.cookie =
           nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/" +

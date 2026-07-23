@@ -36,25 +36,27 @@ npm run img       # regenera imágenes WebP y la imagen OG (tools/imagenes.js)
 `public/assets/js/cookies.js`, que las 8 páginas cargan en el `<head>`. Ese
 archivo decide, según lo que el visitante haya respondido en el aviso:
 
-- Sin decidir o "Rechazar" → no carga **nada** (ni Google Tag Manager ni
-  Mautic) y borra las cookies `_ga*`, `_gid`, `_gat`, `mtc_*` y `mautic_*` que
-  hubieran quedado de una aceptación previa.
+- Sin decidir o "Rechazar" → no carga **nada** (ni Google Tag Manager, ni
+  Mautic, ni el píxel de Meta) y borra las cookies `_ga*`, `_gid`, `_gat`,
+  `_fbp`, `_fbc`, `mtc_*` y `mautic_*` que hubieran quedado de una aceptación
+  previa.
 - "Aceptar" → carga GTM (`GTM-NJ6HFQBC`), que a su vez carga Google Analytics
-  (`G-7XJG0HCP12`), y Mautic.
+  (`G-7XJG0HCP12`); Mautic; y el píxel de Meta (`2928863920537987`).
 
 La decisión se guarda en `localStorage` bajo `srwifi-cookies` y se puede
 cambiar desde el enlace `#cambiar-cookies` de `/privacidad/`.
 
 Esto responde a la Ley 81 de Panamá y a una decisión explícita de Fernando
 (21-jul-2026): consentimiento real, no un aviso decorativo. **Si vas a agregar
-cualquier herramienta de medición nueva (píxel de Meta, Google Ads, etc.),
-tiene que entrar por `cookies.js`, no como script suelto en el HTML.** Meterlo
-directo en el `<head>` rompería la promesa de cumplimiento que el propio sitio
-le vende a sus clientes.
+cualquier herramienta de medición nueva (Google Ads, TikTok, etc.), tiene que
+entrar por `cookies.js`, no como script suelto en el HTML.** Meterlo directo en
+el `<head>` rompería la promesa de cumplimiento que el propio sitio le vende a
+sus clientes.
 
-El píxel de Meta sigue preparado pero comentado en `index.html`, con
-`TU_PIXEL_ID` de relleno. Cuando llegue el ID real hay que moverlo a
-`cookies.js` en vez de descomentarlo donde está.
+El píxel de Meta (`2928863920537987`) ya está integrado en `cookies.js` desde
+el 22-jul-2026, encendido pero solo con consentimiento. Antes había un bloque
+comentado con `TU_PIXEL_ID` en `index.html`; se eliminó justamente para que
+nadie lo descomente y se salte el consentimiento.
 
 ## Estado actual (según los últimos commits)
 
