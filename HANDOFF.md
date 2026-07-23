@@ -64,20 +64,21 @@ Rediseño completo del sitio (Worker de Cloudflare), formularios conectados a
 Mautic (demo y contacto, vía fetch no-cors), verificación de dominio de
 Facebook, aviso de privacidad y `/recursos` con tres artículos.
 
-Lo más reciente (21-jul-2026, ya en producción): tercer artículo
-(`/recursos/wifi-para-restaurantes/`), Google Tag Manager y Analytics activos
-en las 8 páginas, consentimiento de cookies, y el evento de conversión
-`generate_lead` que se dispara al llegar a `/gracias/` — verificado en el sitio
-real, no solo en local.
+Lo más reciente (21/22-jul-2026, ya en producción): tercer artículo
+(`/recursos/wifi-para-restaurantes/`), Google Tag Manager + Analytics + píxel
+de Meta activos en las 8 páginas detrás del consentimiento de cookies, y el
+evento de conversión `generate_lead` (marcado como evento clave en Analytics)
+— todo verificado en el sitio real, no solo en local.
+
+Confirmado que `facebook.com/srwifipanama` es la página correcta (ya
+renombrada a "El Sr WiFi"); se quitó la nota `[PENDIENTE]` de `index.html`
+que preguntaba por esto.
 
 ### Pendientes
 
-- En `index.html` queda una nota `[PENDIENTE]` sobre si
-  `facebook.com/srwifipanama` es la página correcta. Fernando tiene que
-  confirmarlo antes de quitarla.
-- El bloque del testimonio real sigue reservado y vacío en `index.html`.
-- Marcar `generate_lead` como evento clave en Analytics (pendiente del lado de
-  Google, ver `srwifi-marketing/MEDICION.md`).
+- El bloque del testimonio real sigue reservado y vacío en `index.html`. Se
+  llena cuando Fernando consiga el primer testimonio (ver
+  `srwifi-marketing/HANDOFF.md`).
 
 ## Contexto del usuario
 
